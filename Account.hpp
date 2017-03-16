@@ -24,14 +24,16 @@ private:
 public:
     Account();
     Account(int id, const char* name, int balance);
-    ~Account();
+    Account(const Account& copy);
+    virtual ~Account();
     int getAccountID() const;
     char* getName() const ;
     int getBalance() const;
     void printAccount() const;
-    void deposit(int money);
+    virtual void deposit(int money);
     bool withdraw(int money);
 };
+
 
 
 

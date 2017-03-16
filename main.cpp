@@ -29,6 +29,7 @@ int main(int argc, const char * argv[]) {
                 break;
             case MENU_SELECT::QUIT:
                 running = false;
+                break;
             default:
                 break;
         }

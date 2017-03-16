@@ -21,7 +21,13 @@ namespace MENU_SELECT {
         PRINT,
         QUIT
     };
+    
+    enum {
+        NORMAL = 1,
+        CREDIT = 2
+    };
 }
+
 
 class AccountManager {
 
@@ -31,9 +37,12 @@ private:
 
 public:
     AccountManager();
+    AccountManager(const AccountManager& copy);
     ~AccountManager();
     int Menu() const;
     void openAccount();
+    void openNormalAccount();
+    void openHighCreditAccount();
     void printAllAccount() const;
     void deposit();
     void withdraw();

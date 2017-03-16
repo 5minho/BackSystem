@@ -15,7 +15,13 @@ Account::Account(int id, const char* name, int balance): accountID(id), balance(
     strcpy(this->name, name);
 }
 
+Account::Account(const Account& copy): accountID(copy.accountID), balance(copy.balance) {
+    this->name = new char[strlen(copy.name) + 1];
+    strcpy(this->name, copy.name);
+}
+
 Account::~Account() {
+    std::cout<< "delete " << this->name << std::endl;
     delete this->name;
 }
 
